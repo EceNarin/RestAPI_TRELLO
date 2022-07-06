@@ -4,7 +4,7 @@ import io.cucumber.java.en.*;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import static org.junit.Assert.assertEquals;
-import ui.utilities.ConfigReader;
+import api.utilities.ConfigReader;
 import java.util.HashMap;
 import static io.restassured.RestAssured.given;
 
@@ -21,9 +21,9 @@ public class CreateList extends TestBaseApi {
 
         HashMap<String,String> requestBody=new HashMap<>();
         requestBody.put("name",listName);
-        requestBody.put("key", ConfigReader.getProperty("key"));
-        requestBody.put("token",ConfigReader.getProperty("token"));
-        requestBody.put("idBoard", ConfigReader.getProperty("idBoard"));
+        requestBody.put("key", api.utilities.ConfigReader.getProperty("key"));
+        requestBody.put("token",api.utilities.ConfigReader.getProperty("token"));
+        requestBody.put("idBoard", api.utilities.ConfigReader.getProperty("idBoard"));
 
         System.out.println(requestBody);
 

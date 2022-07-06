@@ -1,6 +1,7 @@
 package api.Junit_Trello;
 
 import api.stepdefinitions.TestBaseApi;
+import api.utilities.ConfigReader;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.junit.Test;
@@ -20,9 +21,9 @@ public class TrelloCreateCard extends TestBaseApi {
 
         HashMap<String,String> requestBody=new HashMap<>();
         requestBody.put("name","best");
-        requestBody.put("key", api.utilities.ConfigReader.getProperty("key"));
-        requestBody.put("token", api.utilities.ConfigReader.getProperty("token"));
-        requestBody.put("idList" , api.utilities.ConfigReader.getProperty("idList"));
+        requestBody.put("key", ConfigReader.getProperty("key"));
+        requestBody.put("token", ConfigReader.getProperty("token"));
+        requestBody.put("idList" , ConfigReader.getProperty("idList"));
 
         response =given().
                 spec(spec).

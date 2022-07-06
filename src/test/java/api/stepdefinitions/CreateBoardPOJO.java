@@ -5,7 +5,7 @@ import api.trellopojos.ResponsePojo;
 import io.cucumber.java.en.*;
 import io.restassured.response.Response;
 import org.junit.Assert;
-import ui.utilities.ConfigReader;
+import api.utilities.ConfigReader;
 
 import static io.restassured.RestAssured.given;
 

@@ -1,6 +1,7 @@
 package api.Junit_Trello;
 
 import api.stepdefinitions.TestBaseApi;
+import api.utilities.ConfigReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.path.json.JsonPath;
@@ -21,9 +22,9 @@ public class TrelloCreateList extends TestBaseApi {
 
         HashMap<String,String> requestBody=new HashMap<>();
         requestBody.put("name","ListTesters");
-        requestBody.put("key", api.utilities.ConfigReader.getProperty("key"));
-        requestBody.put("token", api.utilities.ConfigReader.getProperty("token"));
-        requestBody.put("idBoard", api.utilities.ConfigReader.getProperty("idBoard"));
+        requestBody.put("key", ConfigReader.getProperty("key"));
+        requestBody.put("token", ConfigReader.getProperty("token"));
+        requestBody.put("idBoard",ConfigReader.getProperty("idBoard"));
 
         System.out.println(requestBody);
 

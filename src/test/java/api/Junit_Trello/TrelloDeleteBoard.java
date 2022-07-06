@@ -1,6 +1,7 @@
 package api.Junit_Trello;
 
 import api.stepdefinitions.TestBaseApi;
+import api.utilities.ConfigReader;
 import io.restassured.response.Response;
 import org.junit.Test;
 import java.util.HashMap;
@@ -15,11 +16,11 @@ public class TrelloDeleteBoard extends TestBaseApi {
     public void deleteBoardWithIdOf() {
 
         setUp();
-        spec.pathParams("first" , 1 , "second" , "boards" , "third" , api.utilities.ConfigReader.getProperty("idBoard"));
+        spec.pathParams("first" , 1 , "second" , "boards" , "third" , ConfigReader.getProperty("idBoard"));
 
         HashMap<String,String> requestBody=new HashMap<>();
-        requestBody.put("key", api.utilities.ConfigReader.getProperty("key"));
-        requestBody.put("token", api.utilities.ConfigReader.getProperty("token"));
+        requestBody.put("key", ConfigReader.getProperty("key"));
+        requestBody.put("token", ConfigReader.getProperty("token"));
 
         response =given().
                 spec(spec).
